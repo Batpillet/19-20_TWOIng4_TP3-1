@@ -1,13 +1,12 @@
 import React from "react";
 
 function ChangeProfile(props) {
-    const {profile, onChangeProfile} = props;
+    const{profil, parameter} = props;
 
     return (
-        <button className={'px-4 text-white'}
-                onClick={() => onChangeProfile(profile.id)}>
-            {profile.firstName}
-        </button>
+        <div className="px-4 text-white">
+            <button onClick={() => parameter(profil.id)}> {profil.prenom}</button>
+        </div>
     );
 }
 

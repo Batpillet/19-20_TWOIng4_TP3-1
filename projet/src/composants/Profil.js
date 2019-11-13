@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 
 class Profil extends Component {
     
-    changeColor(){
+    constructor(props){
+        super(props); 
+    }
+
+    handleChangeColor(){
         document.body.style= 'background: green;'; 
     }
 
@@ -12,9 +16,9 @@ class Profil extends Component {
       return (
       <div className="card card-body mb-3">
           <ul className="list-group">
-              <li className="list-group-item">Prenom : {this.props.prenom}</li>
-              <li className="list-group-item">Nom : {this.props.nom}</li>
-              <li className="list-group-item">Date de naissance : {this.props.date}</li>                
+              <li className="list-group-item">Prenom : {this.props.infos.prenom}</li>
+              <li className="list-group-item">Nom : {this.props.infos.nom}</li>
+              <li className="list-group-item">Date de naissance : {this.props.infos.date}</li>                
           </ul>
       </div>   
       )
