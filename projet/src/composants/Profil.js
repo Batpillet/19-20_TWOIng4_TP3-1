@@ -1,4 +1,4 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 
 
 class Profil extends Component {
@@ -16,9 +16,11 @@ class Profil extends Component {
       return (
       <div className="card card-body mb-3">
           <ul className="list-group">
-              <li className="list-group-item">Prenom : {this.props.infos.prenom}</li>
-              <li className="list-group-item">Nom : {this.props.infos.nom}</li>
-              <li className="list-group-item">Date de naissance : {this.props.infos.date}</li>                
+              <h3 align="center">Profil</h3>
+              <img src={this.props.infos.photo} align="center"/>
+              <li className="list-group-item"><b>Prenom : </b>{this.props.infos.prenom}</li>
+              <li className="list-group-item"><b>Nom : </b>{this.props.infos.nom}</li>
+              <li className="list-group-item"><b>Date de naissance : </b>{this.props.infos.date}</li>                
           </ul>
       </div>   
       )

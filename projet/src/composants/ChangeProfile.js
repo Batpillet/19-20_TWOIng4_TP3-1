@@ -4,7 +4,7 @@ function ChangeProfile(props) {
     const{profil, parameter} = props;
 
     return (
-        <div className="px-4 text-white">
+        <div className="px-1">
             <button onClick={() => parameter(profil.id)}> {profil.prenom}</button>
         </div>
     );
