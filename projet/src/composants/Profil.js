@@ -7,12 +7,7 @@ class Profil extends Component {
         super(props); 
     }
 
-    handleChangeColor(){
-        document.body.style= 'background: green;'; 
-    }
-
     render(){
-        
       return (
       <div className="card card-body mb-3">
           <ul className="list-group">
@@ -24,18 +19,6 @@ class Profil extends Component {
           </ul>
       </div>   
       )
-      
-        /*<div className="Profil">
-            {this.state.users.map(users => (
-                <div align= "center">
-                    <button onClick={this.handleClick}>{users.prenom}</button>
-                </div>
-            
-        ))}*/
-            
-           // <button onClick={this.changeColor}>Change style</button>
-       
-      
     }
   }
 

@@ -23,7 +23,8 @@ class App extends Component {
           date: '12 Avril 1976',
           background: "#FFFFFF",
           photo:"Josephine.png",
-          lastcomment: "Bonjour tous le monde !"
+          lastcomment: "Bonjour tous le monde !",
+          likes: 0
         },
         {
           id: 1, 
@@ -32,7 +33,8 @@ class App extends Component {
           date: '23 septembre 1987',
           background: "#FFFFFF",
           photo: 'Eric.png',
-          lastcomment: "Je suis nouveau ici, quelqu'un pour m'aider ?"
+          lastcomment: "Je suis nouveau ici, quelqu'un pour m'aider ?",
+          likes: 0
         },
         {
           id: 2,
@@ -41,7 +43,8 @@ class App extends Component {
           date: '30 mars 1844',
           background: "#FFFFFF",
           photo: 'Paul.png', 
-          lastcomment: "Je cherche un de mes amis !"
+          lastcomment: "Je cherche un de mes amis !",
+          likes: 0
         }
       ], 
       select: 0
@@ -57,6 +60,7 @@ class App extends Component {
   handleClick(index){
     this.setState({select: index})
   }
+
   handleClickLikes(index){
     const profileCopy = this.state.profil.slice();
     profileCopy[index].likes++;
@@ -84,9 +88,11 @@ class App extends Component {
             <div className="row">
               <LastPost
                 lastcomment={this.state.profil[this.state.select]}
-                likes={this.state.profil[this.state.select]}
+                like={this.state.profil[this.state.select].likes}
                 onClick={() => this.handleClickLikes(this.state.select)}
               />
+              
+              
             </div>
           </div>
         </div>  
