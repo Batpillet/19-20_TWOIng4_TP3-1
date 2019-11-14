@@ -7,7 +7,7 @@ class LastPost extends React.Component {
                 <ul className="list-group">
                     <h5 align="center" className="card-title" style={{color: "white"}}>Derniere publication</h5>
                     <li className="list-group-item" style={{background: "#90EE90"}}>{this.props.lastcomment.lastcomment}</li>
-                    <a className="list-group-item" style={{background: "#90EE90"}}><button className="btn btn-info" onClick={this.props.onClick}> 👍 C'est super ! </button></a>
+                    <a className="list-group-item" style={{background: "#90EE90"}}><button className="btn btn-info" onClick={this.props.clic}> 👍 C'est super ! </button></a>
                     <li className="list-group-item" style={{background: "#90EE90"}}>J'aime : {this.props.like}</li>
                 </ul>
             </div>

@@ -4,15 +4,11 @@ import Profil from './composants/Profil';
 import ChangeProfile from './composants/ChangeProfile'
 import LastPost from './composants/LastPost'
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import { pathToFileURL } from 'url';
-import Josephine from './Josephine.png'; 
-import "./App.css"
 
 class App extends Component {
   
   constructor(props){
     super(props); 
-    
     
     this.state={
       profil: [
@@ -56,21 +52,16 @@ class App extends Component {
   {
     this.setState({select: index});
   }
-  
-  handleClick(index){
-    this.setState({select: index})
-  }
 
-  handleClickLikes(index){
-    const profileCopy = this.state.profil.slice();
-    profileCopy[index].likes++;
-    this.setState({profil: profileCopy})
+  handleLikes(index){
+    const compteur = this.state.profil.slice();
+    compteur[index].likes++;
+    this.setState({profil: compteur})
   }
   
   render(){
-    
     return (
-      <div id="cool">
+      <div>
         <nav className="navbar navbar-extend-sm navbar-dark bg-dark py-0 justify-content-end" id="navig">
         {this.state.profil.map((profil)=>
           <ChangeProfile
@@ -79,25 +70,25 @@ class App extends Component {
             parameter={this.handleChange}
           />
           )}
-          </nav>
-          <div className="container-fluid" id="profil">
-            <div className="row">
-              <Profil 
-                infos = {this.state.profil[this.state.select]}
-              />
-            </div>
-            <div className="row">
-              <LastPost
-                lastcomment={this.state.profil[this.state.select]}
-                like={this.state.profil[this.state.select].likes}
-                onClick={() => this.handleClickLikes(this.state.select)}
-              />          
-            </div>
+        </nav>
+        <div className="container-fluid" id="profil">
+          <div className="row">
+            <Profil 
+              infos = {this.state.profil[this.state.select]}
+            />
           </div>
-        </div>  
-        );
-      }
-    }
+          <div className="row">
+            <LastPost
+              lastcomment={this.state.profil[this.state.select]}
+              like={this.state.profil[this.state.select].likes}
+              clic={() => this.handleLikes(this.state.select)}
+            />          
+          </div>
+        </div>
+      </div>  
+    );
+  }
+}
     
     export default App;
     
