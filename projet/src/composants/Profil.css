@@ -1,5 +1,15 @@
+ .buttonTrue{
+    background: green;
+  }
+  
+  .buttonTrue{
+    background: red;
+  }
 
+  .bouton{
+    text-align: center;
+  }
 
-.profil{
-    border-top: 10%;
-}
+  .card-title{
+      color: white: 
+  }

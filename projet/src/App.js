@@ -22,7 +22,7 @@ class App extends Component {
           prenom: 'Josephine', 
           date: '12 Avril 1976',
           background: "#FFFFFF",
-          photo:"Josephine.png",
+          photo:'https://cdn.icon-icons.com/icons2/1736/PNG/512/4043250-avatar-child-girl-kid_113270.png',
           lastcomment: "Bonjour tous le monde !",
           likes: 0
         },
@@ -30,19 +30,19 @@ class App extends Component {
           id: 1, 
           nom: 'Dampierre', 
           prenom: 'Eric', 
-          date: '23 septembre 1987',
+          date: '29 Aout 1982',
           background: "#FFFFFF",
-          photo: 'Eric.png',
-          lastcomment: "Je suis nouveau ici, quelqu'un pour m'aider ?",
+          photo: 'https://cdn.icon-icons.com/icons2/1736/PNG/512/4043240-avatar-bad-breaking-chemisrty-heisenberg_113279.png',
+          lastcomment: "Je l'ai regardé, il m'a regardé, je l'ai regardé, il m'a regardé. Bref, je suis devant un miroir",
           likes: 0
         },
         {
           id: 2,
           nom: 'Verlaine', 
           prenom: "Paul", 
-          date: '30 mars 1844',
+          date: '30 Mars 1844',
           background: "#FFFFFF",
-          photo: 'Paul.png', 
+          photo: 'https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png', 
           lastcomment: "Je cherche un de mes amis !",
           likes: 0
         }
@@ -70,7 +70,7 @@ class App extends Component {
   render(){
     
     return (
-      <div>
+      <div id="cool">
         <nav className="navbar navbar-extend-sm navbar-dark bg-dark py-0 justify-content-end" id="navig">
         {this.state.profil.map((profil)=>
           <ChangeProfile
@@ -80,19 +80,18 @@ class App extends Component {
           />
           )}
           </nav>
-          <div className="container" id="profil">
-            <div className="row"></div>
+          <div className="container-fluid" id="profil">
+            <div className="row">
               <Profil 
                 infos = {this.state.profil[this.state.select]}
               />
+            </div>
             <div className="row">
               <LastPost
                 lastcomment={this.state.profil[this.state.select]}
                 like={this.state.profil[this.state.select].likes}
                 onClick={() => this.handleClickLikes(this.state.select)}
-              />
-              
-              
+              />          
             </div>
           </div>
         </div>  

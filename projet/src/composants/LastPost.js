@@ -1,15 +1,14 @@
 import React from "react";
-import { throwStatement } from "@babel/types";
 
 class LastPost extends React.Component {
     render() {
         return(
-            <div className="card card-body mb-3">
+            <div className="card card-body mt-3 mb-3" style={{background: "#2E8B57"}}>
                 <ul className="list-group">
-                    <p><b>Derniere publication :</b> </p>
-                    <li className="list-group-item">{this.props.lastcomment.lastcomment}</li>
-                    <a className="list-group-item"><button onClick={this.props.onClick}> 👍 C'est super ! </button></a>
-                    <li className="list-group-item">J'aime : {this.props.like}</li>
+                    <h5 align="center" className="card-title" style={{color: "white"}}>Derniere publication</h5>
+                    <li className="list-group-item" style={{background: "#90EE90"}}>{this.props.lastcomment.lastcomment}</li>
+                    <a className="list-group-item" style={{background: "#90EE90"}}><button className="btn btn-info" onClick={this.props.onClick}> 👍 C'est super ! </button></a>
+                    <li className="list-group-item" style={{background: "#90EE90"}}>J'aime : {this.props.like}</li>
                 </ul>
             </div>
         );
